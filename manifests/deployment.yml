@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: hojuabicalculator 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hojuabicalculator
+  template:
+    metadata:
+      labels:
+        app: hojuabicalculator 
+    spec:
+      containers:
+        - name: hojuabicalculator 
+          image: taylankiran.azurecr.io/hojuabicalculator
+          ports:
+          - containerPort: 3000
